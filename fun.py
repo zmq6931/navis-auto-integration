@@ -1,5 +1,8 @@
 import win32com
 from win32com.client import Constants as catEnum
+import os
+from pyxll import xl_app
+from win32com.client import constants
 
 
 class navisComApi(object):
@@ -365,3 +368,38 @@ class my_excel:
     
       
     pass
+
+'''list'''
+class my_list(object):
+    def filter_list_more_than_number(mylist, mynumber):
+        return list(filter(lambda x: x >= mynumber, mylist))
+
+    def filter_list_less_than_number(mylist, mynumber):
+        return list(filter(lambda x: x <= mynumber, mylist))
+
+    def get_list_obj_name_list(mylist):
+        return [x.name for x in mylist]
+
+    def remove_DuplcatedString_InList(mylist):
+        templist = []
+        for word in mylist:
+            if word not in templist:
+                templist.append(word)
+        return templist
+
+
+"""color transfer"""
+class my_color:
+    @staticmethod
+    def colorRGB2ExcelColor(r,g,b):
+        colorResult=r+(g<<8)+(b<<16)
+        return colorResult
+    
+    
+    
+    
+    
+
+if __name__ == "__main__":
+
+    print("test")
