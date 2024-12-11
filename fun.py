@@ -1,6 +1,7 @@
 import win32com
 from win32com.client import Constants as catEnum
 
+
 class navisComApi(object):
     @staticmethod
     def getNavisDoc():
